@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu>
+    <ion-menu side="end">
       <ion-header>
         <ion-toolbar>
           <ion-title>Menu</ion-title>
@@ -8,11 +8,35 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerDirection]="'root'" [routerLink]="[appPages[0].url]" lines="none">
+              <ion-icon slot="start" [name]="appPages[0].icon"></ion-icon>
               <ion-label>
-                {{p.title}}
+                {{appPages[0].title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none" href="https://play.google.com/store/apps/details?id=com.teamleaf.imagedownloader">
+              <ion-icon slot="start" name="md-appstore"></ion-icon>
+              <ion-label>
+                {{'Play Store (Android)'}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none">
+              <ion-icon slot="start" name="ios-appstore"></ion-icon>
+              <ion-label>
+                {{'App Store (iOS)'}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerDirection]="'root'" [routerLink]="[appPages[1].url]" lines="none">
+              <ion-icon slot="start" [name]="appPages[1].icon"></ion-icon>
+              <ion-label>
+                {{appPages[1].title}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
